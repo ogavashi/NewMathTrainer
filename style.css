@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ead7d1;
+  font-family: "Roboto", sans-serif;
+  color: #dd99bb;
+  overflow-y: hidden;
+  user-select: none;
+}
+
+#main-frame {
+  display: flex;
+  justify-content: center;
+}
+
+#trainer {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 350px;
+}
+
+#info-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  max-width: 350px;
+  max-height: 24px;
+}
+
+#hearts {
+    min-width:  46px;
+}
+
+#time {
+  margin-right: 25px;
+}
+
+#screen {
+  background-color: white;
+  min-width: 350px;
+  min-height: 130px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(10, 100px);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button {
+  font-size: 80px;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  transition: 0.4s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button:active {
+  background-color: black;
+}
+
+.wrong {
+  background-color: #1f1a38;
+  color: white;
+  pointer-events: none;
+}
