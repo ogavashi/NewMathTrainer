@@ -98,7 +98,7 @@ body {
     justify-content: center;
     position: fixed;
     top: 0%;
-    left: 1%;
+    left: 2%;
   }
 
   #trainer {
@@ -116,9 +116,9 @@ body {
     justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 18px;
     max-width: 300px;
-    max-height: 24px;
+    max-height: 20px;
   }
 
   #hearts {
@@ -143,12 +143,12 @@ body {
 
   #buttons {
     display: grid;
-    grid-template-columns: repeat(3, 75px);
-    grid-template-rows: repeat(10, 75px);
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(10, 70px);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     justify-content: center;
-    margin-top: 25px;
+    margin-top: 20px;
   }
 
   .button {
