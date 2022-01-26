@@ -98,7 +98,7 @@ body {
     justify-content: center;
     position: fixed;
     top: 0%;
-    left: 2%;
+    left: 3%;
   }
 
   #trainer {
@@ -115,7 +115,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 18px;
     max-width: 300px;
     max-height: 20px;
@@ -148,7 +148,7 @@ body {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .button {
