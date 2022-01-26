@@ -1,3 +1,33 @@
+const gameOver = document.querySelector("#gameOver");
+const gameOver1 = document.querySelector("#gameOver2");
+const gameOver2 = document.querySelector("#gameOver3");
+const gameOver3 = document.querySelector("#gameOver4");
+const dec = document.querySelector("#decSound");
+const inc = document.querySelector("#incSound");
+const success = document.querySelector("#success");
+const fail1 = document.querySelector("#fail1");
+const fail2 = document.querySelector("#fail2");
+
+const mainSounds = {
+  0: gameOver,
+  1: dec,
+  2: inc,
+  3: success,
+};
+
+const failSounds = {
+  1: fail1,
+  2: fail2,
+  3: dec,
+};
+
+const gameOverSouns = {
+  1: gameOver,
+  2: gameOver1,
+  3: gameOver2,
+  4: gameOver3,
+};
+
 const answersField = (() => {
   let fieldArray = [];
 
@@ -24,6 +54,7 @@ const answersField = (() => {
 })();
 
 const gameMaster = (() => {
+  let audio = 0;
   let answer;
   let score = 0;
   let hearts = "♥ ♥ ♥";
@@ -41,15 +72,13 @@ const gameMaster = (() => {
   };
   const getHearts = () => hearts;
   const decHearts = () => {
-    const audio = document.querySelector("#decSound");
-    audio.play();
+    playSound(mainSounds[1]);
     hearts = hearts.slice(2);
   };
   const incHearts = () => {
     if (hearts.length != 5) {
       hearts += " ♥";
-      const audio = document.querySelector("#incSound");
-      audio.play();
+      playSound(mainSounds[2]);
     }
   };
   const generateTask = () => {
@@ -79,13 +108,13 @@ const gameMaster = (() => {
   };
   const checkAnswer = (variant) => {
     if (getAnswer() == variant.textContent) {
-      const audio = document.querySelector("#success");
-      audio.play();
+      playSound(mainSounds[3]);
       incScore();
-      incCombo(); 
+      incCombo();
       console.log(combo);
       visualMaster.showTask();
     } else {
+      playSound(failSounds[generator(3)]);
       combo = 0;
       decHearts();
       getHearts() ? visualMaster.mistake(variant) : restartGame();
@@ -94,7 +123,12 @@ const gameMaster = (() => {
   const restartGame = () => {
     score = 0;
     hearts = "♥ ♥ ♥";
+    playSound(gameOverSouns[generator(4)]);
     visualMaster.showTask();
+  };
+  const playSound = (sound) => {
+    console.log(sound);
+    sound.play();
   };
   return {
     getAnswer,
@@ -110,6 +144,7 @@ const gameMaster = (() => {
     decHearts,
     restartGame,
     incCombo,
+    playSound,
   };
 })();
 
