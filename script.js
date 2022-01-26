@@ -40,9 +40,17 @@ const gameMaster = (() => {
     } else combo++;
   };
   const getHearts = () => hearts;
-  const decHearts = () => (hearts = hearts.slice(2));
+  const decHearts = () => {
+    const audio = document.querySelector("#decSound");
+    audio.play();
+    hearts = hearts.slice(2);
+  };
   const incHearts = () => {
-    if (hearts.length != 5) hearts += " ♥";
+    if (hearts.length != 5) {
+      hearts += " ♥";
+      const audio = document.querySelector("#incSound");
+      audio.play();
+    }
   };
   const generateTask = () => {
     answersField.clearArray();
@@ -71,8 +79,10 @@ const gameMaster = (() => {
   };
   const checkAnswer = (variant) => {
     if (getAnswer() == variant.textContent) {
+      const audio = document.querySelector("#success");
+      audio.play();
       incScore();
-      incCombo();
+      incCombo(); 
       console.log(combo);
       visualMaster.showTask();
     } else {
