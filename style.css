@@ -97,8 +97,8 @@ body {
     display: flex;
     justify-content: center;
     position: fixed;
-    top: 2%;
-    left: 0%;
+    top: 1%;
+    left: 1%;
   }
 
   #trainer {
