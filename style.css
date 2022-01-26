@@ -6,6 +6,7 @@ body {
   color: #dd99bb;
   overflow-y: hidden;
   user-select: none;
+  height: 100vh;
 }
 
 #main-frame {
@@ -127,7 +128,8 @@ body {
   #screen {
     background-color: white;
     min-width: 300px;
-    min-height: 100px;
+    min-height: 80px;
+    max-height: 90px;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -137,8 +139,8 @@ body {
 
   #buttons {
     display: grid;
-    grid-template-columns: repeat(3, 85px);
-    grid-template-rows: repeat(10, 85px);
+    grid-template-columns: repeat(3, 75px);
+    grid-template-rows: repeat(10, 75px);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     justify-content: center;
