@@ -42,7 +42,7 @@ const gameMaster = (() => {
   const getHearts = () => hearts;
   const decHearts = () => (hearts = hearts.slice(2));
   const incHearts = () => {
-    if (hearts.length != 3) hearts += " ♥";
+    if (hearts.length != 5) hearts += " ♥";
   };
   const generateTask = () => {
     answersField.clearArray();
